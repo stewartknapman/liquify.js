@@ -1,0 +1,24 @@
+{
+  "name": "liquify.js",
+  "version": "0.0.1",
+  "description": "A Javascript port of Shopifys Liquid templating language.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stewartknapman/liquify.js.git"
+  },
+  "keywords": [
+    "Liquid",
+    "Javascript",
+    "Shopify"
+  ],
+  "author": "@stewartknapman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stewartknapman/liquify.js/issues"
+  },
+  "homepage": "https://github.com/stewartknapman/liquify.js#readme"
+}
