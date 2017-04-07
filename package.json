@@ -4,7 +4,7 @@
   "description": "A Javascript port of Shopifys Liquid templating language.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/",
+    "test": "mocha tests/**",
     "build": "watch 'npm test' ./lib/ ./tests/"
   },
   "repository": {
