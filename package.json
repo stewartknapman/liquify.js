@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/stewartknapman/liquify.js/issues"
   },
-  "homepage": "https://github.com/stewartknapman/liquify.js#readme"
+  "homepage": "https://github.com/stewartknapman/liquify.js#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdom": "^9.12.0",
+    "jsdom-global": "^2.1.1",
+    "mocha": "^3.2.0",
+    "parallelshell": "^2.0.0",
+    "watch": "^1.0.2"
+  }
 }
