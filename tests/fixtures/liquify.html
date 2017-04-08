@@ -1,5 +1,27 @@
 <script id="input" type="javascript/template">
+  <ul data-products-size="{{ products.size }}">
+    {% for product in products %}
+      <li>
+        <h3><a href="/products/{{ product.title | handle }}"></a>{{ product.title }}</h3>
+      </li>
+    {% endfor %}
+  </ul>
 </script>
 
 <div id="output">
+  <ul data-products-size="3">
+
+    <li>
+      <h3><a href="/products/example-product-1">Example Product 1</a></h3>
+    </li>
+
+    <li>
+      <h3><a href="/products/example-product-2">Example Product 2</a></h3>
+    </li>
+
+    <li>
+      <h3><a href="/products/example-product-3">Example Product 3</a></h3>
+    </li>
+
+  </ul>
 </div>

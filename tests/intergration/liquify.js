@@ -24,7 +24,7 @@
 
   Render template
   output => 'hello Stewart'
-  
+
   template.render({ "user": { "name": "Stewart" } });
 
 */
@@ -33,6 +33,7 @@ require('jsdom-global')();
 var fs = require('fs');
 var assert = require('chai').assert;
 var fixture = fs.readFileSync('./tests/fixtures/liquify.html', 'utf8');
+var Liquify = require('../../lib/liquify.js');
 
 describe('Liquify.js', function() {
 
@@ -40,6 +41,14 @@ describe('Liquify.js', function() {
     document.body.innerHTML = fixture;
   });
 
-  it('renders a liquid template');
+  it('renders a basic liquid template', function () {
+    var liquify = new Liquify();
+    var template = liquify.parse('hello {{ user.name }}');
+    var output = template.render({ "user": { "name": "Stewart" } });
+
+    assert.equal(output, 'hello Stewart');
+  });
+
+  it('renders a complex liquid template');
 
 });
