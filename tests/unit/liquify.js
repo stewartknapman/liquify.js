@@ -4,7 +4,11 @@ var Template = require('../../lib/liquify/template.js');
 
 describe('Liquify', function() {
 
-  it('is a singelton');
+  it('is a singelton', function () {
+    var liquify1 = new Liquify();
+    var liquify2 = new Liquify();
+    assert.equal(liquify1, liquify2);
+  });
 
   it('accepts custom tags');
 
@@ -14,14 +18,30 @@ describe('Liquify', function() {
 
   describe('API', function() {
 
-    it('has a parse method');
+    it('has a parse method', function () {
+      var liquify = new Liquify();
+      assert.equal(typeof liquify.parse, 'function');
+    });
 
-    it('accepts a string to its parse method');
+    it('accepts a string to its parse method', function () {
+      var liquify = new Liquify();
+
+      template = liquify.parse();
+      assert.equal(template, undefined);
+
+      template = liquify.parse([]);
+      assert.equal(template, undefined);
+
+      template = liquify.parse({});
+      assert.equal(template, undefined);
+
+      template = liquify.parse('');
+      assert.notEqual(template, undefined);
+    });
 
     it('returns a template from the parse method', function () {
       var liquify = new Liquify();
       var template = liquify.parse('');
-
       assert.equal(template.constructor, Template);
     });
 
