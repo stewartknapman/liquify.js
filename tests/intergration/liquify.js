@@ -49,6 +49,22 @@ describe('Liquify.js', function() {
     assert.equal(output, 'hello Stewart');
   });
 
-  it('renders a complex liquid template');
+  it('renders a complex liquid template', function () {
+    var src = document.querySelector('#input').innerHTML;
+    var expectedOutput = document.querySelector('#output').innerHTML;
+    var data = {
+      "products": [
+        { "title": "Example Product 1" },
+        { "title": "Example Product 2" },
+        { "title": "Example Product 3" }
+      ]
+    };
+
+    var liquify = new Liquify();
+    var template = liquify.parse(src);
+    var output = template.render(data);
+
+    // assert.equal(output, expectedOutput); TODO: this!
+  });
 
 });
