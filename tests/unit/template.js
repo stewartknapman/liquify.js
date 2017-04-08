@@ -10,14 +10,24 @@ describe('Template', function() {
     assert.equal(template.src, src);
   });
 
+  it('throws a no template error if no template string was given', function () {
+    try {
+      var template = new Template();
+    } catch (e) {
+      assert.equal(e.message, 'No template source given');
+    }
+  });
+
   it('has a render method', function () {
-    var template = new Template();
+    var src = 'hello {{ user.name }}';
+    var template = new Template(src);
     assert.typeOf(template.render, 'function');
   });
 
   it('accepts a json object to its render method', function () {
     var output;
-    var template = new Template();
+    var src = 'hello {{ user.name }}';
+    var template = new Template(src);
 
     output = template.render();
     assert.equal(output, undefined);
