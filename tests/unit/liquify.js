@@ -20,10 +20,11 @@ describe('Liquify', function() {
 
     it('has a parse method', function () {
       var liquify = new Liquify();
-      assert.equal(typeof liquify.parse, 'function');
+      assert.typeOf(liquify.parse, 'function');
     });
 
     it('accepts a string to its parse method', function () {
+      var template;
       var liquify = new Liquify();
 
       template = liquify.parse();
