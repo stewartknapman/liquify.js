@@ -45,5 +45,12 @@ describe('Liquify', function() {
       assert.equal(template.constructor, Template);
     });
 
+    it('passes the template source to the template object', function () {
+      var src = 'hello {{ user.name }}';
+      var liquify = new Liquify();
+      var template = liquify.parse(src);
+      assert.equal(template.src, src);
+    });
+
   });
 });
