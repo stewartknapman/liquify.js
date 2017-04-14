@@ -1,6 +1,7 @@
 var assert = require('chai').assert;
 var Tokens = require('../../lib/liquify/tokens.js');
-var parsers = require('../../lib/liquify/parsers.js');
+var Parsers = require('../../lib/liquify/parsers.js');
+var parsers = new Parsers();
 
 describe('Tokens', function() {
 

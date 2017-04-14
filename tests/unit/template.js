@@ -1,6 +1,7 @@
 var assert = require('chai').assert;
 var Template = require('../../lib/liquify/template.js');
-var parsers = require('../../lib/liquify/parsers.js');
+var Parsers = require('../../lib/liquify/parsers.js');
+var parsers = new Parsers();
 
 describe('Template', function() {
 
